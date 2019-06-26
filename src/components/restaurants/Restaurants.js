@@ -6,7 +6,9 @@ const Restaurants = ({ restaurants, deleteRestaurant }) => {
   const restaurantcard = restaurants.map(restaurant =>
       <Restaurant   key={restaurant.id}
                     restaurant = {restaurant}
-                    deleteRestaurant={deleteRestaurant} />)
+                    deleteRestaurant={deleteRestaurant}
+                   />)
+
     return(
       <ul>
         {restaurantcard}

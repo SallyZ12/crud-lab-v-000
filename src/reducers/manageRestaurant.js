@@ -2,7 +2,7 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-const initialState = { restaurants: [], reviews: [] }
+const initialState = { restaurants: [], reviews: [], text: "" }
 
 export default (state=initialState, action)=> {
   switch (action.type){
@@ -19,6 +19,19 @@ export default (state=initialState, action)=> {
 
         const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id)
           return {...state, restaurants}
+
+    case "UPDATE_TEXT":
+
+          return {...state, text: action.text}
+
+    case "UPDATE_RESTAURANT":
+      const updatedRestaurants = state.restaurants.map(restaurant => {
+        if (restaurant.id === action.restaurant.id){
+        return action.restaurant
+      }
+        return restaurant
+      })
+      return {...state, restaurants: updatedRestaurants}
 
     case "ADD_REVIEW":
     // console.log("rev add text:", action.review.text)

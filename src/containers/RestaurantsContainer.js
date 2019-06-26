@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { addRestaurant } from '../actions/restaurants'
 import { deleteRestaurant } from '../actions/restaurants'
 
+
 class RestaurantsContainer extends Component {
 
   render() {
@@ -12,7 +13,8 @@ class RestaurantsContainer extends Component {
       <div>
         <RestaurantInput addRestaurant={this.props.addRestaurant} />
         <Restaurants restaurants={this.props.restaurants}
-                     deleteRestaurant={this.props.deleteRestaurant}/>
+                     deleteRestaurant={this.props.deleteRestaurant}
+                    />
       </div>
     )
   }
