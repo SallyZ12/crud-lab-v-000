@@ -13,7 +13,7 @@ export const deleteRestaurant = id => {
 }
 
 export const updateRestaurant = restaurant => {
-  console.log("update", restaurant)
+  console.log("update Restaurant", restaurant)
   return {
     type: "UPDATE_RESTAURANT",
     restaurant
@@ -21,9 +21,17 @@ export const updateRestaurant = restaurant => {
 }
 
 export const updateText = text => {
+  console.log("update text:", text)
 
   return {
     type: "UPDATE_TEXT",
+    text
+  }
+}
+
+export const clearText = text => {
+  return {
+    type: "CLEAR_TEXT",
     text
   }
 }
