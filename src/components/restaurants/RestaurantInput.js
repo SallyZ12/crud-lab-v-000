@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { updateText } from '../../actions/restaurants'
+import { clearText } from '../../actions/restaurants'
 import { updateRestaurant } from '../../actions/restaurants'
 import { connect } from 'react-redux'
 
@@ -14,11 +15,14 @@ class RestaurantInput extends Component {
   //  text: event.target.value,
   // })
    this.props.updateText(event.target.value)
+
 };
 
  handleOnSubmit = event => {
    event.preventDefault();
    this.props.addRestaurant(this.props.text)
+   // use the following the clear text from input field
+    this.props.clearText(this.props.text)
    // can delete
    // this.setState({
    //   text: ""
@@ -55,4 +59,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, { updateText, updateRestaurant})(RestaurantInput);
+export default connect(mapStateToProps, { updateText, clearText, updateRestaurant})(RestaurantInput);
