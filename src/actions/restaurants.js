@@ -30,6 +30,7 @@ export const updateText = text => {
 }
 
 export const clearText = text => {
+  console.log("clear:", text)
   return {
     type: "CLEAR_TEXT",
     text

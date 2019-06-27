@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer'
 import { updateRestaurant } from '../../actions/restaurants'
+// import { clearText } from '../../actions/restaurants'
 import { connect } from 'react-redux'
 
 
@@ -17,14 +18,9 @@ class Restaurant extends Component {
           <button onClick={() => deleteRestaurant(restaurant.id)}> DELETE </button>
           <button onClick={() => {
             const updatedRestaurant = {...restaurant, text }
-
             updateRestaurant(updatedRestaurant)
-
-
-              }
+          }
             }> Update </button>
-
-
 
               <ReviewsContainer restaurant = {restaurant} />
         </li>
