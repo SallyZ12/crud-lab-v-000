@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer'
 import { updateRestaurant } from '../../actions/restaurants'
+import { clearText } from '../../actions/restaurants'
 import { connect } from 'react-redux'
 
 
 class Restaurant extends Component {
 
   render() {
-    const { restaurant, deleteRestaurant, updateRestaurant, text } = this.props;
+    const { restaurant, deleteRestaurant, updateRestaurant, clearText, text } = this.props;
 
     return (
       <div>
@@ -18,7 +19,11 @@ class Restaurant extends Component {
 
           <button onClick={() => {
             const updatedRestaurant = {...restaurant, text }
-            updateRestaurant(updatedRestaurant)}}> Update </button>
+            updateRestaurant(updatedRestaurant)
+            const clearUpdateText = {...restaurant, text}
+            clearText(clearUpdateText)
+
+            }}> Update </button>
 
           <ReviewsContainer restaurant = {restaurant} />
         </li>
@@ -33,4 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateRestaurant})(Restaurant);
+export default connect(mapStateToProps, {updateRestaurant, clearText})(Restaurant);
