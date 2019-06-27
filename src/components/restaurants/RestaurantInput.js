@@ -29,9 +29,6 @@ class RestaurantInput extends Component {
    // })
  }
 
-
-
-
   render() {
     return (
       <div>
@@ -56,7 +53,6 @@ const mapStateToProps = state => {
     text: state.text
   }
 }
-
 
 
 export default connect(mapStateToProps, { updateText, clearText, updateRestaurant})(RestaurantInput);
