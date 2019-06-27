@@ -21,7 +21,7 @@ class RestaurantInput extends Component {
  handleOnSubmit = event => {
    event.preventDefault();
    this.props.addRestaurant(this.props.text)
-   // use the following the clear text from input field
+   // use the following to clear text from input field when enter name
     this.props.clearText(this.props.text)
    // can delete
    // this.setState({
