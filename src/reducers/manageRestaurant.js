@@ -21,7 +21,6 @@ export default (state=initialState, action)=> {
           return {...state, restaurants}
 
     case "UPDATE_TEXT":
-
           return {...state, text: action.text}
 
     case "UPDATE_RESTAURANT":
