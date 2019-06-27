@@ -33,6 +33,10 @@ export default (state=initialState, action)=> {
       })
       return {...state, restaurants: updatedRestaurants}
 
+    case "CLEAR_TEXT":
+        return {...state, text: ""}
+
+
     case "ADD_REVIEW":
     // console.log("rev add text:", action.review.text)
     // console.log("rev add restId:", action.review.restaurantId)
