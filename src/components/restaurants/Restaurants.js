@@ -3,7 +3,8 @@ import Restaurant from './Restaurant'
 
 
 const Restaurants = ({ restaurants, deleteRestaurant }) => {
-  const restaurantcard = restaurants.map(restaurant =>
+
+  const restaurantcard = restaurants.restaurants.map(restaurant =>
       <Restaurant   key={restaurant.id}
                     restaurant = {restaurant}
                     deleteRestaurant={deleteRestaurant}

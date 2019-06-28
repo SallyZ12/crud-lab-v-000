@@ -1,8 +1,8 @@
 export const addRestaurant = text => {
-  // console.log("addRest:", text)
+  console.log("action addRest:", text)
   return {
     type: "ADD_RESTAURANT",
-    text
+  text
   }
 }
 

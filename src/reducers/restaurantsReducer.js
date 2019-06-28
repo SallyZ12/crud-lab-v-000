@@ -2,15 +2,18 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-const initialState = { restaurants: [], reviews: [], text: "" }
+const initialState = { restaurants: [],  text: "" }
 
 export default (state=initialState, action)=> {
   switch (action.type){
     case "ADD_RESTAURANT":
-
+console.log("state:", action)
+      // const restaurant = {restaurants.id: cuidFn(), restaurants.text: action.text}
       const restaurant = { id: cuidFn(), text: action.text }
         // console.log("reducer add rest id:", restaurant.id)
+        console.log("add rest:", restaurant)
         return { ...state, restaurants: state.restaurants.concat(restaurant) }
+
 
 // remember to spread on state (...state) so don't delete existing state
 
