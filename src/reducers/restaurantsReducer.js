@@ -2,13 +2,13 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-const initialState = { restaurants: [],  text: "" }
+const initialState =  {restaurants: [], text: ""}
 
 export default (state=initialState, action)=> {
   switch (action.type){
     case "ADD_RESTAURANT":
 console.log("state:", action)
-      // const restaurant = {restaurants.id: cuidFn(), restaurants.text: action.text}
+
       const restaurant = { id: cuidFn(), text: action.text }
         // console.log("reducer add rest id:", restaurant.id)
         console.log("add rest:", restaurant)
@@ -40,8 +40,8 @@ console.log("state:", action)
 
 
     case "ADD_REVIEW":
-    console.log("rev add text:", action.review.text)
-    console.log("rev add restId:", action.review.restaurantId)
+    // console.log("rev add text:", action.review.text)
+    // console.log("rev add restId:", action.review.restaurantId)
     const review = { id: cuidFn(), text: action.review.text, restaurantId: action.review.restaurantId }
       return { ...state, reviews: [...state.reviews, review]}
 

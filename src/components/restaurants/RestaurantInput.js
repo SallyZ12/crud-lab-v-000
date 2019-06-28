@@ -50,7 +50,8 @@ class RestaurantInput extends Component {
 
 const mapStateToProps = state => {
   return {
-    text: state.text
+    text: state.text,
+    restaurant: state.restaurant
   }
 }
 
