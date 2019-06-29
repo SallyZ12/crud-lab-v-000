@@ -2,7 +2,7 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-const initialState =  {restaurants: [], text: ""}
+const initialState =  {restaurants: [ ], text: ""}
 
 export default (state=initialState, action)=> {
   switch (action.type){
@@ -11,7 +11,7 @@ console.log("state:", action)
 
       const restaurant = { id: cuidFn(), text: action.text }
         // console.log("reducer add rest id:", restaurant.id)
-        console.log("add rest:", restaurant)
+        // console.log("add rest:", restaurant)
         return { ...state, restaurants: state.restaurants.concat(restaurant) }
 
 
@@ -27,6 +27,7 @@ console.log("state:", action)
           return {...state, text: action.text}
 
     case "UPDATE_RESTAURANT":
+    console.log("up rest red:", action.restaurant)
       const updatedRestaurants = state.restaurants.map(restaurant => {
         if (restaurant.id === action.restaurant.id){
         return action.restaurant
