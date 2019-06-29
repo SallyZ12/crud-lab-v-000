@@ -49,9 +49,10 @@ class RestaurantInput extends Component {
 };
 
 const mapStateToProps = state => {
+  console.log("state in mstp:", state)
   return {
-    text: state.text,
-    restaurant: state.restaurant
+    text: state.restaurants.text,
+    restaurant: state.restaurants.restaurant
   }
 }
 
