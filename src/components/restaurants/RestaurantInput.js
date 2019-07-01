@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 
 class RestaurantInput extends Component {
 
-  state = {
-    text: ""
-  }
+  // state = {
+  //   text: ""
+  // }
 
  handleOnChange = event =>{
   // this.setState({
