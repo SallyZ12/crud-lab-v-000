@@ -41,7 +41,7 @@ console.log("add_rest:", action)
 
 
     case "ADD_REVIEW":
-    // console.log("rev add text:", action.review.text)
+    console.log("rev add text:", action.review.text)
     // console.log("rev add restId:", action.review.restaurantId)
     const review = { id: cuidFn(), text: action.review.text, restaurantId: action.review.restaurantId }
       return { ...state, reviews: [...state.reviews, review]}
