@@ -4,16 +4,15 @@ export const cuidFn = cuid;
 
 const initialState =  {restaurants: [ ], text: ""}
 
-export default (state=initialState, action)=> {
+export default (state=initialState, action) => {
   switch (action.type){
     case "ADD_RESTAURANT":
-console.log("state:", action)
+console.log("add_rest:", action)
 
       const restaurant = { id: cuidFn(), text: action.text }
         // console.log("reducer add rest id:", restaurant.id)
         // console.log("add rest:", restaurant)
         return { ...state, restaurants: state.restaurants.concat(restaurant) }
-
 
 // remember to spread on state (...state) so don't delete existing state
 
@@ -24,6 +23,7 @@ console.log("state:", action)
           return {...state, restaurants}
 
     case "UPDATE_TEXT":
+    // console.log("up text red:", action.text)
           return {...state, text: action.text}
 
     case "UPDATE_RESTAURANT":
