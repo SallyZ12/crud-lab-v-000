@@ -2,7 +2,7 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-const initialState =  {restaurants: [ ], text: ""}
+const initialState =  { restaurants: [ ], text: ""}
 
 export default (state=initialState, action) => {
   switch (action.type){
