@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
-import { updateText } from '../../actions/restaurants'
-import { clearText } from '../../actions/restaurants'
+import { updateText } from '../../actions/text'
+import { clearText } from '../../actions/text'
 import { updateRestaurant } from '../../actions/restaurants'
 import { connect } from 'react-redux'
 
+// not yet using updateRestaurant or clearText
+
 class RestaurantInput extends Component {
 
-  // state = {
-  //   text: ""
-  // }
+  state = {
+    text: ""
+  }
 
  handleOnChange = event =>{
-  // this.setState({
-  //  text: event.target.value,
-  // })
-   this.props.updateText(event.target.value)
+   // console.log("hoc:", event.target.value)
+  this.setState({
+   [event.target.name]: event.target.value
+ })
 
+   // this.props.updateText(event.target.value)
 };
 
  handleOnSubmit = event => {
    event.preventDefault();
-   this.props.addRestaurant(this.props.text)
+
+   this.props.addRestaurant(this.state)
    // use the following to clear text from input field when enter name
-    this.props.clearText(this.props.text)
+    // this.props.clearText(this.props.text)
    // can delete
-   // this.setState({
-   //   text: ""
-   // })
+   this.setState({
+     text: ""
+   })
  }
 
   render() {
@@ -37,7 +41,7 @@ class RestaurantInput extends Component {
       <input
         placeholder="restaurant name"
         type="text"
-        value={this.props.text}
+        value={this.state.text}
         name="text"
         onChange={this.handleOnChange}
       />
@@ -51,10 +55,9 @@ class RestaurantInput extends Component {
 const mapStateToProps = state => {
   // console.log("state in mstp:", state)
   return {
-    text: state.restaurants.text,
-    restaurant: state.restaurants.restaurant
+    text: state.text,
+    restaurant: state.restaurant
   }
 }
-
 
 export default connect(mapStateToProps, { updateText, clearText, updateRestaurant})(RestaurantInput);
