@@ -1,8 +1,8 @@
 export const addRestaurant = text => {
-  console.log("action addRest:", text)
+
   return {
     type: "ADD_RESTAURANT",
-  text
+    text
   }
 }
 
@@ -14,25 +14,9 @@ export const deleteRestaurant = id => {
 }
 
 export const updateRestaurant = restaurant => {
-  console.log("act update Restaurant", restaurant)
+  // console.log("act update Restaurant", restaurant)
   return {
     type: "UPDATE_RESTAURANT",
    restaurant
-  }
-}
-
-export const updateText = text => {
-  // console.log("update text:", text)
-  return {
-    type: "UPDATE_TEXT",
-    text
-  }
-}
-
-export const clearText = text => {
-  console.log("clear:", text)
-  return {
-    type: "CLEAR_TEXT",
-    text
   }
 }
