@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ReviewsContainer from '../../containers/ReviewsContainer'
 import { updateRestaurant } from '../../actions/restaurants'
-import { clearText } from '../../actions/restaurants'
+import { clearText } from '../../actions/text'
 import { connect } from 'react-redux'
 
-
+// not yet using updatedRestaurant or clearText
 class Restaurant extends Component {
 
   render() {
