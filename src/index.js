@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import restaurants from './reducers/restaurantsReducer'
 import reviews from './reducers/reviewsReducer'
-
+import text from './reducers/textReducer'
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 
 const reducer = combineReducers({
 restaurants,
-reviews
+reviews,
+text
 })
 
 
